@@ -17,7 +17,7 @@ export default async function Header() {
                     <Link href={"/account"}>Личный кабинет</Link>
 
                     {
-                        !session && <Link className='' href="/Login">ВОЙТИ</Link>
+                        !session && <Link className='' href="/login">ВОЙТИ</Link>
                     }
                     {
                         !!session && <Logout />

@@ -39,7 +39,7 @@ export default function Form() {
             }
             <div className='flex mx-auto mt-5'>
                 <p className='text-slate-400'>Вы еще не зарегистрированы? </p>
-                <Link className='underline ml-3' href={'/Register'}>Зарегистрироваться</Link>
+                <Link className='underline ml-3' href={'/register'}>Зарегистрироваться</Link>
             </div>
 
         </form>
