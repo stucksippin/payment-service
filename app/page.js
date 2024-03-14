@@ -1,15 +1,23 @@
-import { sql } from "@vercel/postgres";
+'use client'
+import React from 'react'
 
-export default async function Cart({ params }) {
-  const { rows } = await sql`SELECT * from CARTS where user_id=${params.user}`;
+export default function MainPage() {
 
+  async function handleSend(e) {
+    const formData = new FormData(e.target)
+    const resp = fetch('/api/test', {
+      method: "POST",
+      body: JSON.stringify({
+        test: formData.get("test")
+      })
+
+    })
+
+  }
   return (
-    <div>
-      {rows.map((row) => (
-        <div key={row.id}>
-          {row.id} - {row.quantity}
-        </div>
-      ))}
-    </div>
-  );
+    <form onSubmit={handleSend}>
+      <input className='p-3 border' name="test" type='text'></input>
+      <button>SEND</button>
+    </form>
+  )
 }
