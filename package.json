@@ -4,10 +4,9 @@
   "private": true,
   "scripts": {
     "postinstall": "npx prisma generate",
-    "build": "next build",
-    "prebuild": "npx prisma generate",
     "dev": "next dev",
     "start": "next start",
+    "vercel-build": "prisma generate && prisma migrate deploy && next build",
     "lint": "next lint"
   },
   "dependencies": {
