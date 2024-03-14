@@ -3,7 +3,7 @@ import { compare } from "bcrypt";
 import { PrismaClient } from "@prisma/client";
 export const NextAuthOptions = {
     pages: {
-        signIn: '/Login'
+        signIn: '/login'
     },
     session: {
         strategy: 'jwt'

@@ -41,7 +41,7 @@ export default function page() {
             {/* {existingUser && <p>Аккаунт с такой почтой уже существует</p>} */}
             <div className='flex mx-auto mt-5'>
                 <p className='text-slate-400'>Вы уже зарегистрированы? </p>
-                <Link className='underline ml-3' href={'/Login'}>Войти</Link>
+                <Link className='underline ml-3' href={'/login'}>Войти</Link>
             </div>
 
         </form>
