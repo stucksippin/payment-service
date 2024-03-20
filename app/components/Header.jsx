@@ -16,6 +16,7 @@ export default async function Header() {
                     <Link href={"/cardList"}>Список карт</Link>
                     <Link href={"/account"}>Личный кабинет</Link>
                     <Link href={"/forwarder"}>Форвардер</Link>
+                    <Link href={"/moneystatistic"}>Статистика</Link>
 
                     {
                         !session && <Link className='' href="/login">ВОЙТИ</Link>

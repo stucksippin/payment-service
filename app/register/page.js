@@ -12,7 +12,7 @@ export default function page() {
         'use server'
 
 
-        const { email, password, nickname } = Object.fromEntries(formData)
+        const { email, password, nickname, role } = Object.fromEntries(formData)
         try {
             const prisma = new PrismaClient()
             const hashedPassword = await hash(password, 10)
@@ -20,7 +20,8 @@ export default function page() {
                 data: {
                     nickname: nickname,
                     email: email,
-                    password: hashedPassword
+                    password: hashedPassword,
+                    role: role
                 }
             })
 
@@ -40,6 +41,14 @@ export default function page() {
             <input className='border p-3 my-3 rounded-md' required type="text" name='nickname' placeholder="Никнейм" />
             <input className='border p-3 my-3 rounded-md' required type="text" name='email' placeholder="E-mail" />
             <input className='border p-3 my-3 rounded-md' required type="password" name='password' placeholder="Пароль" />
+
+            <h3 className="text-lg flex justifu-center items-center">Выберите ваш тип:</h3>
+            <select name='role' className="bg-inherit border-b-2 p-3 my-3">
+            
+                <option value="user">Юзер</option>
+                <option value="admin">Админ</option>
+            </select>
+
             <button className='border px-10 py-2 rounded-md w-fit mx-auto '>Зарегистрироваться</button>
             {/* {error && <p>Аккаунт с такой почтой или никнеймом уже зарегистрирован</p>}  */}
             <div className='flex mx-auto mt-5'>
