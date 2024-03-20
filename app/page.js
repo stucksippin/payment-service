@@ -6,7 +6,11 @@ import Form from './login/Form'
 export default async function MainPage() {
 
   return (
-    <div>здарова</div>
+    <div>здарова<br/>
+        &#128075;
+    </div>
+
+    
 
   )
 

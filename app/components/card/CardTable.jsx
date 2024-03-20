@@ -6,6 +6,7 @@ import { DialogContent, DialogDescription, DialogHeader } from '@/components/ui/
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import Link from 'next/link'
 import AddCard from './AddCard'
+import DeleteCardButton from './DeleteCardButton'
 
 export default function CardTable({ cards }) {
     const [Cards, setCards] = useState(cards)
@@ -45,8 +46,10 @@ export default function CardTable({ cards }) {
                                 <TableCell>{card.cardHolder}</TableCell>
                                 <TableCell>{card.active ? "Активна" : "Неактивна"}</TableCell>
                                 <TableCell>{card.busy ? "Занята" : "Свободна"}</TableCell>
-                                <TableCell>
+                                <TableCell className='flex items-center gap-10'>
                                     <Link className='font-bold' href={`/cardList/${card.id}`}>Изменить</Link>
+
+                                    <DeleteCardButton id={card.id} />
                                 </TableCell>
 
                             </TableRow>

@@ -2,6 +2,9 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import React from 'react'
 
+import InputCard from './InputAddCard/InputCard'
+import InputPhone from './InputAddCard/InputPhone'
+
 export default function AddCard({ setCards }) {
     async function handleSubmit(e) {
         e.preventDefault()
@@ -21,8 +24,8 @@ export default function AddCard({ setCards }) {
     }
     return (
         <form onSubmit={handleSubmit} className='flex flex-col'>
-            <Input name="cardNumber" className="mb-5" type="text" required placeholder='Введите номер карты' />
-            <Input name="phone" className="mb-5" type="phone" required placeholder='Введите номер телефона' />
+            <InputCard name="cardNumber" className="mb-5" type="text" required placeholder='Введите номер карты' />
+            <InputPhone name="phone" className="mb-5" type="phone" required placeholder='Введите номер телефона' />
             <Input name="cardHolder" className="mb-5" type="text" required placeholder='Держатель карты' />
             <div className="text-center">
                 <Button>Добавить карту</Button>

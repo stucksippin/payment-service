@@ -10,14 +10,14 @@ export const NextAuthOptions = {
     },
     providers: [CredentialsProvider({
         credentials: {
-            email: {},
+            nickname: {},
             password: {}
         },
         async authorize(credentials) {
             const prisma = new PrismaClient()
             const user = await prisma.users.findFirst({
                 where: {
-                    email: credentials.email
+                    nickname: credentials.nickname
                 }
             })
             const correctPassword = await compare(credentials.password, user.password)
@@ -26,7 +26,7 @@ export const NextAuthOptions = {
             if (correctPassword) {
                 return {
                     id: user.id,
-                    email: user.email,
+                    nickname: user.nickname,
                     role: user.role
                 }
             }
@@ -44,7 +44,7 @@ export const NextAuthOptions = {
         async session({ token, session }) {
 
             session.user = {
-                email: token.email,
+                nickname: token.nickname,
                 role: token.role,
                 id: token.id
             }

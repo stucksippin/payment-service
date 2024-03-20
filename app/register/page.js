@@ -41,7 +41,7 @@ export default function page() {
             <input className='border p-3 my-3 rounded-md' required type="text" name='email' placeholder="E-mail" />
             <input className='border p-3 my-3 rounded-md' required type="password" name='password' placeholder="Пароль" />
             <button className='border px-10 py-2 rounded-md w-fit mx-auto '>Зарегистрироваться</button>
-            {error && <p>Аккаунт с такой почтой или никнеймом уже зарегистрирован</p>}
+            {/* {error && <p>Аккаунт с такой почтой или никнеймом уже зарегистрирован</p>}  */}
             <div className='flex mx-auto mt-5'>
                 <p className='text-slate-400'>Вы уже зарегистрированы? </p>
                 <Link className='underline ml-3' href={'/login'}>Войти</Link>
