@@ -1,0 +1,10 @@
+INSERT INTO card (phone, cardHolder, cardNumber, active, busy) VALUES ('8-800-555-35-35', 'VELIKANOVA D.N', '2018123112311231', true, false);
+INSERT INTO card (phone, cardHolder, cardNumber, active, busy) VALUES ('8-800-555-35-36', 'IVANOV I.I', '2018123112311232', false, true);
+INSERT INTO card (phone, cardHolder, cardNumber, active, busy) VALUES ('8-800-555-35-37', 'PETROV P.P', '2018123112311233', true, false);
+INSERT INTO card (phone, cardHolder, cardNumber, active, busy) VALUES ('8-800-555-35-38', 'SIDOROV S.S', '2018123112311234', false, true);
+INSERT INTO card (phone, cardHolder, cardNumber, active, busy) VALUES ('8-800-555-35-39', 'KUZNETSOV K.K', '2018123112311235', true, false);
+INSERT INTO card (phone, cardHolder, cardNumber, active, busy) VALUES ('8-800-555-35-40', 'SMIRNOV S.S', '2018123112311236', false, true);
+INSERT INTO card (phone, cardHolder, cardNumber, active, busy) VALUES ('8-800-555-35-41', 'VOLKOV V.V', '2018123112311237', true, false);
+INSERT INTO card (phone, cardHolder, cardNumber, active, busy) VALUES ('8-800-555-35-42', 'NOVIKOV N.N', '2018123112311238', false, true);
+INSERT INTO card (phone, cardHolder, cardNumber, active, busy) VALUES ('8-800-555-35-43', 'FEDOROV F.F', '2018123112311239', true, false);
+INSERT INTO card (phone, cardHolder, cardNumber, active, busy) VALUES ('8-800-555-35-44', 'MOROZOV M.M', '2018123112311240', false, true);

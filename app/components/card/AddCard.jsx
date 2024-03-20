@@ -1,13 +1,32 @@
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 import React from 'react'
 
-export default function AddCard() {
-    return (
-        <form>
-            <input type="text" placeholder='Введите номер карты' />
-            <input type="text" placeholder='Введите номер телефона' />
-            <input type="text" placeholder='Держатель карты' />
-            <input type="chechbox" placeholder='Активность включить сразу?' />
+export default function AddCard({ setCards }) {
+    async function handleSubmit(e) {
+        e.preventDefault()
+        const formData = new FormData(e.target)
+        const resp = await fetch('/api/cardActions/create', {
+            method: 'PUT',
+            body: formData
+        })
 
+        const result = await resp.json()
+        if (resp.ok) {
+            setCards((prev) => ([
+                ...prev,
+                result
+            ]))
+        }
+    }
+    return (
+        <form onSubmit={handleSubmit} className='flex flex-col'>
+            <Input name="cardNumber" className="mb-5" type="text" required placeholder='Введите номер карты' />
+            <Input name="phone" className="mb-5" type="phone" required placeholder='Введите номер телефона' />
+            <Input name="cardHolder" className="mb-5" type="text" required placeholder='Держатель карты' />
+            <div className="text-center">
+                <Button>Добавить карту</Button>
+            </div>
         </form>
     )
 }

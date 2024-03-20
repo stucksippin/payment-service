@@ -3,13 +3,11 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "./generated/client"
 }
 
 datasource db {
-  provider  = "postgresql"
-  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
-  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
 }
 
 model trader {
@@ -28,6 +26,7 @@ model card {
 
 model users {
   id       Int    @id @default(autoincrement())
+  nickname String @unique
   email    String @unique
   password String
   role     String @default("user")
