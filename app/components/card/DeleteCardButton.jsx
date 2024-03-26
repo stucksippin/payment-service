@@ -12,6 +12,10 @@ export default function DeleteCardButton({ id }) {
                 id: id
             })
         })
+
+        if (resp.ok) {
+            window.location.reload()
+        }
     }
     return (
         <div>

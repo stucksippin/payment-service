@@ -44,7 +44,7 @@ export default async function AccountPage() {
                 data && (
                     <>
                         <h2 className='font-bold text-center text-2xl'>Профиль</h2>
-                        <div className='flex justify-end font-bold'>Баланс: </div>
+                        <div className='flex justify-end font-bold mt-10 text-xl p-3'>Баланс: 100.000 руб. </div>
                         <div className='flex flex-col mt-5'>
                             <span className='text-lg    '>Trader: <span className='font-bold text-green-700 '>{data.nickname}</span></span>
                             <span className='text-xl'>Почта: {data.email}</span>

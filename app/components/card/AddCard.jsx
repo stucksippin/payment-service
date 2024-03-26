@@ -5,12 +5,13 @@ import React from 'react'
 import InputCard from './InputAddCard/InputCard'
 import InputPhone from './InputAddCard/InputPhone'
 import { useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 
 
 
 export default function AddCard({ setCards }) {
     const { data: session, status } = useSession()
-
+    const router = useRouter()
     async function handleSubmit(e) {
         e.preventDefault()
         const formData = new FormData(e.target)
@@ -25,7 +26,9 @@ export default function AddCard({ setCards }) {
             setCards((prev) => ([
                 ...prev,
                 result
+
             ]))
+
         }
 
 
