@@ -10,11 +10,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model trader {
-  id       Int    @id @default(autoincrement())
-  nickname String
-}
-
 model card {
   id         Int     @id @default(autoincrement())
   phone      String
@@ -22,6 +17,8 @@ model card {
   cardHolder String
   active     Boolean
   busy       Boolean
+  users      users?  @relation(fields: [usersId], references: [id])
+  usersId    Int?
 }
 
 model users {
@@ -30,4 +27,5 @@ model users {
   email    String @unique
   password String
   role     String @default("user")
+  cards    card[]
 }

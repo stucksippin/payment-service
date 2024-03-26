@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import CardInfo from './CardInfo'
 import { Dialog, DialogTitle, DialogTrigger } from '@radix-ui/react-dialog'
 import { DialogContent, DialogDescription, DialogHeader } from '@/components/ui/dialog'
@@ -7,9 +7,15 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import Link from 'next/link'
 import AddCard from './AddCard'
 import DeleteCardButton from './DeleteCardButton'
+import { SessionProvider } from 'next-auth/react'
 
 export default function CardTable({ cards }) {
     const [Cards, setCards] = useState(cards)
+
+    useEffect(() => {
+        console.log(Cards);
+    }, [Cards])
+
     return (
         <>
             <div className='mr-10 border p-3 bg-green-200 w-fit ml-10 mb-10 rounded-xl'>
@@ -20,7 +26,9 @@ export default function CardTable({ cards }) {
                     <DialogContent>
                         <DialogHeader>
                             <DialogTitle>Добавление карты</DialogTitle>
-                            <AddCard setCards={setCards} />
+                            <SessionProvider>
+                                <AddCard setCards={setCards} />
+                            </SessionProvider>
                         </DialogHeader>
                     </DialogContent>
                 </Dialog>

@@ -44,7 +44,6 @@ export default function page() {
 
             <h3 className="text-lg flex justifu-center items-center">Выберите ваш тип:</h3>
             <select name='role' className="bg-inherit border-b-2 p-3 my-3">
-            
                 <option value="user">Юзер</option>
                 <option value="admin">Админ</option>
             </select>

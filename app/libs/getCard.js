@@ -1,7 +1,14 @@
 import { PrismaClient } from "@prisma/client";
 
-export default async function getCards() {
+export default async function getCards(userId) {
     const prisma = new PrismaClient()
-    const cards = await prisma.card.findMany();
-    return cards
+    const user = await prisma.users.findFirstOrThrow({
+        where: {
+            id: userId
+        },
+        include: {
+            cards: true
+        }
+    });
+    return user.cards
 }

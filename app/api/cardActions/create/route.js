@@ -13,12 +13,11 @@ export async function PUT(request) {
             cardHolder: data.cardHolder,
             active: data.active === "false",
             busy: data.busy === "false",
+            usersId: Number(data.user_id)
         }
     })
     if (resp) {
-        return Response.json({
-            result: "OK"
-        })
+        return Response.json(resp)
     } else {
         return Response.json({
             result: "fail"

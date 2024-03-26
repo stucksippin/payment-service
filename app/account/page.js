@@ -21,8 +21,16 @@ export default async function AccountPage() {
     const cards = await getCards()
     const activeCards = await prisma.card.findMany({
         where: {
-            active: true
-        }
+            AND: [
+                {
+                    usersId: session.user.id
+                },
+                {
+                    active: true
+                }
+            ]
+        },
+
     })
 
 
@@ -30,10 +38,13 @@ export default async function AccountPage() {
 
     return (
         <div className='container'>
+
+
             {
                 data && (
                     <>
                         <h2 className='font-bold text-center text-2xl'>Профиль</h2>
+                        <div className='flex justify-end font-bold'>Баланс: </div>
                         <div className='flex flex-col mt-5'>
                             <span className='text-lg    '>Trader: <span className='font-bold text-green-700 '>{data.nickname}</span></span>
                             <span className='text-xl'>Почта: {data.email}</span>

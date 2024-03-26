@@ -1,8 +1,15 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Input } from '@/components/ui/input'
 
-const InputCard = ({ name, className, type, required, placeholder }) => {
+const InputCard = ({ name, className, type, required, placeholder, cardValue }) => {
     const [value, setValue] = useState('');
+
+
+
+    useEffect(() => {
+        if (cardValue)
+            setValue(cardValue)
+    }, [])
 
     const handleChange = (e) => {
         if (name === 'cardNumber') {
@@ -11,10 +18,11 @@ const InputCard = ({ name, className, type, required, placeholder }) => {
         } else {
             setValue(e.target.value);
         }
+
     };
 
     return (
-        <Input name={name} className={className} type={type} required={required} placeholder={placeholder} value={value} onChange={handleChange} />
+        <Input maxLength='16' name={name} className={className} type={type} required={required} placeholder={placeholder} value={value} onChange={handleChange} />
     );
 };
 
