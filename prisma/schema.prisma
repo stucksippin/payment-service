@@ -36,5 +36,5 @@ model transactions {
   idRequester   String
   sum           Int
   dataSent      DateTime
-  status        String
+  status        Int
 }

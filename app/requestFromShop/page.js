@@ -12,7 +12,7 @@ export default function Transcation() {
             idRequester: 'Casino212',
             sum: 2120,
             dataSent: formattedDate,
-            status: 'Ожидает оплаты'
+            status: 0
         }
         const resp = await fetch('http://localhost:3000/api/transaction', {
             method: 'POST',

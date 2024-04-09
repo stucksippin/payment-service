@@ -11,7 +11,7 @@ export async function POST(req) {
                 idRequester: data.idRequester,
                 sum: parseInt(data.sum),
                 dataSent: new Date(data.dataSent),
-                status: data.status
+                status: parseInt(data.status)
             }
         });
         return Response.json({ result: 'ok' });

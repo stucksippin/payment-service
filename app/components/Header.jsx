@@ -7,16 +7,17 @@ export default async function Header() {
     const session = await getServerSession(NextAuthOptions)
 
     return (
-        <header>
-            <nav>
-                <ul className='flex justify-between m-10 p-5 bg-slate-100'>
+        <header className='w-[320px] min-h-screen bg-white border border-slate-200'>
+            <nav className='text-lg'>
+                <ul className='flex flex-col gap-y-10 items-center mt-5'>
+                    <Link className='font-bold text-2xl' href={"/"}>PAYMENT SERVICE</Link>
 
-                    <Link href={"/"}>PAYMENT SERVICE</Link>
-                    <Link href={"/cardList"}>Список карт</Link>
-                    <Link href={"/account"}>Личный кабинет</Link>
-                    <Link href={"/moneystatistic"}>Статистика</Link>
-                    <Link href={"/forwarder"}>Форвардер</Link>
-                    <Link href={"/requestFromShop"}>Транзакция отправка</Link>
+
+                    <Link className='hover:bg-indigo-500 hover:text-white p-3 rounded-lg' href={"/account"}>Личный кабинет</Link>
+                    <Link className='hover:bg-indigo-500 hover:text-white p-3 rounded-lg' href={"/cardList"}>Список карт</Link>
+                    <Link className='hover:bg-indigo-500 hover:text-white p-3 rounded-lg' href={"/moneystatistic"}>Статистика</Link>
+                    <Link className='hover:bg-indigo-500 hover:text-white p-3 rounded-lg' href={"/forwarder"}>Форвардер</Link>
+                    <Link className='hover:bg-indigo-500 hover:text-white p-3 rounded-lg' href={"/requestFromShop"}>Транзакция отправка</Link>
 
 
                     {

@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import { getServerSession } from "next-auth";
 import Form from "./login/Form";
 import { useRouter } from "next/navigation";
+import UserBar from "./components/UserBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,9 +20,12 @@ export default async function RootLayout({ children }) {
 
     <html lang="en">
 
-      <body className={inter.className}>
-        <Header />
-        <main>{children}</main>
+      <body className='bg-slate-100'>
+        <div className="flex">
+          <Header />
+          <UserBar />
+          <main className="mt-[200px] w-full ml-5 mr-5">{children}</main>
+        </div>
         <footer></footer>
 
       </body>

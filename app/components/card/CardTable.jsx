@@ -13,12 +13,12 @@ export default function CardTable({ cards }) {
     const [Cards, setCards] = useState(cards)
 
     useEffect(() => {
-        console.log(Cards);
+
     }, [Cards])
 
     return (
-        <>
-            <div className='mr-10 border p-3 bg-green-200 w-fit ml-10 mb-10 rounded-xl'>
+        <div >
+            <div className='mr-10 border p-3 bg-indigo-500 text-white w-fit ml-10 mb-10 rounded-xl'>
                 <Dialog>
                     <DialogTrigger>
                         Добавить карту
@@ -66,7 +66,7 @@ export default function CardTable({ cards }) {
                 </TableBody>
             </Table>
 
-        </>
+        </div>
 
     )
 }
