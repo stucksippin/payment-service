@@ -3,7 +3,7 @@ import { PrismaClient } from "@prisma/client"
 
 export async function DELETE(request) {
     const { id } = await request.json()
-    console.log(id)
+
 
 
     const prisma = new PrismaClient()

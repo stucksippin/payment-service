@@ -29,3 +29,12 @@ model users {
   role     String @default("user")
   cards    card[]
 }
+
+model transactions {
+  id            Int      @id @default(autoincrement())
+  idTransaction String   @unique
+  idRequester   String
+  sum           Int
+  dataSent      DateTime
+  status        String
+}

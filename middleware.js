@@ -8,7 +8,10 @@ export default withAuth(
             return NextResponse.redirect(new URL('/'), req.url)
         }
     }
+
 )
+
+
 
 
 export const config = { matcher: ["/register", "/moneystatistic"] }

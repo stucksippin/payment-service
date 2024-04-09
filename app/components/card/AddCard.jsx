@@ -20,7 +20,7 @@ export default function AddCard({ setCards }) {
             method: 'PUT',
             body: formData
         })
-        console.log(resp);
+
         const result = await resp.json()
         if (resp.ok) {
             setCards((prev) => ([

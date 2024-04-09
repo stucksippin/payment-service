@@ -3,7 +3,7 @@ import { PrismaClient } from "@prisma/client"
 export async function PATCH(request) {
     const body = await request.formData()
     const data = Object.fromEntries(body)
-    console.log(data)
+
 
     const prisma = new PrismaClient()
     const resp = await prisma.card.update({

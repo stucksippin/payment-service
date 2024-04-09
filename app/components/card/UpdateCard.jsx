@@ -17,7 +17,7 @@ export default function UpdateCard({ id, cardHolder, phone, cardNumber, active }
         })
 
         const res = await resp.json()
-        console.log(res);
+
         if (res.result === "OK") {
             router.push('/cardList')
             router.refresh()

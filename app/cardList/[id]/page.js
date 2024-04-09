@@ -5,7 +5,7 @@ import UpdateCard from '@/app/components/card/UpdateCard'
 
 export default async function CardById({ params: { id } }) {
     const card = await getCardById(id)
-    console.log(card);
+
     return (
         <div>
             <UpdateCard
