@@ -23,7 +23,7 @@ export default async function AccountPage() {
         where: {
             AND: [
                 {
-                    usersId: session.user.id
+                    usersId: session?.user.id
                 },
                 {
                     active: true

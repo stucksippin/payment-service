@@ -1,11 +1,11 @@
-import { PrismaClient } from "@prisma/client"
+import prisma from "@/app/libs/prisma"
 
 export async function PATCH(request) {
     const body = await request.formData()
     const data = Object.fromEntries(body)
 
 
-    const prisma = new PrismaClient()
+
     const resp = await prisma.card.update({
         data: {
             cardNumber: data.cardNumber,

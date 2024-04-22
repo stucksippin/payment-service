@@ -1,9 +1,11 @@
-import { PrismaClient } from '@prisma/client';
+import prisma from "@/app/libs/prisma";
+
+
 
 
 export async function POST(req) {
     const data = await req.json();
-    const prisma = new PrismaClient();
+
     try {
         const resp = await prisma.transactions.create({
             data: {
