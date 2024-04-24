@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client"
+import prisma from "@/app/libs/prisma"
 
 
 export async function DELETE(request) {
@@ -6,7 +6,7 @@ export async function DELETE(request) {
 
 
 
-    const prisma = new PrismaClient()
+
     const resp = await prisma.card.delete({
         where: {
             id: parseInt(id)

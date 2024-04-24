@@ -15,23 +15,20 @@ export default async function AccountPage() {
             where: {
                 id: session.user.id
             }
-        });
-
-        activeCards = await prisma.card.findMany({
-            where: {
-                AND: [
-                    {
-                        usersId: session.user.id
-                    },
-                    {
-                        active: true
-                    }
-                ]
-            },
-        });
+        })
     }
     const cards = await getCards()
-
+    const activeCards = await prisma.card.findMany({
+        where: {
+            AND: [
+                {
+                    usersId: session.user.id
+                },
+                {
+                    active: true
+                }
+            ]
+        },
 
 
 
