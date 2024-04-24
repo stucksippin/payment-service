@@ -1,6 +1,6 @@
 'use client'
 
-export default function forwarder() {
+export default function Forwarder() {
     async function sendMsg() {
         const sendMessage = {
             KEY: "traderOne",

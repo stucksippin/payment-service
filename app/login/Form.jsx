@@ -25,7 +25,7 @@ export default function Form() {
         }
         else if (!response?.error) {
             router.push('/')
-            // router.refresh()
+            router.refresh()
         }
 
     }

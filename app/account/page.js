@@ -5,33 +5,34 @@ import React from 'react'
 import getCards from '../libs/getCard';
 
 export default async function AccountPage() {
-
-
     const session = await getServerSession(NextAuthOptions)
     const prisma = new PrismaClient()
 
     let data = null
-    if (session) {
+    let activeCards = null
+    if (session && session.user) {
         data = await prisma.users.findFirst({
             where: {
                 id: session.user.id
             }
-        })
+        });
+
+        activeCards = await prisma.card.findMany({
+            where: {
+                AND: [
+                    {
+                        usersId: session.user.id
+                    },
+                    {
+                        active: true
+                    }
+                ]
+            },
+        });
     }
     const cards = await getCards()
-    const activeCards = await prisma.card.findMany({
-        where: {
-            AND: [
-                {
-                    usersId: session.user.id
-                },
-                {
-                    active: true
-                }
-            ]
-        },
 
-    })
+
 
 
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function page() {
+export default function MoneyStatistis() {
     return (
         <div>
             <div className='flex justify-between text-xl'>

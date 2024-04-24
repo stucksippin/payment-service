@@ -5,15 +5,15 @@ module.exports = {
   },
 
   module: {
-    rules: [
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: "html-loader"
-          }
-        ]
-      }
-    ]
+    // rules: [
+    //   {
+    //     test: /\.html$/,
+    //     use: [
+    //       {
+    //         loader: "html-loader"
+    //       }
+    //     ]
+    //   }
+    // ]
   },
 };

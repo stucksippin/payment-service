@@ -1,7 +1,12 @@
 import UserLayout from './UserLayout';
 
 function UserPage() {
-    // содержимое страницы пользователя
+    return (
+        <div>
+          <h1>Юзер</h1>
+          {/* Другой контент для страницы администратора */}
+        </div>
+      );
 }
 
 export default function User() {

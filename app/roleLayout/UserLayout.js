@@ -1,12 +1,19 @@
-import withRole from '../path/to/withRole';
-import {Account} from "../account/page";
-import {CardList} from '../cardList/page'
-import {Forwarder} from '../forwarder/page'
+// import dynamic from 'next/dynamic';
+import AccountPage from '../account/page';
+import CardList from '../cardList/page';
+import Forwarder from '../forwarder/page';
 
-function UserLayout({ children }) {
+
+
+// const ProtectedRoute = dynamic(() => import('../components/ProtectedRoute'), {
+//   ssr: false
+// });
+
+
+export default function UserLayout({ children }) {
     return (
       <div>
-        <Account/>
+        <AccountPage/>
         <CardList/>
         <Forwarder/>
         {children}
@@ -14,7 +21,8 @@ function UserLayout({ children }) {
     );
 }
 
-export default withRole(UserLayout, 'user');
 
+
+// export default ProtectedRoute(UserLayout, ['user']);
 
 
