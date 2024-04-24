@@ -8,7 +8,7 @@ function AdminPage() {
   );
 }
 
-// Используйте AdminLayout для обертывания AdminPage
+
 export default function Admin() {
   return (
   

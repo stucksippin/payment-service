@@ -18,19 +18,9 @@ export default async function AccountPage() {
         })
     }
     const cards = await getCards()
-    const activeCards = await prisma.card.findMany({
-        where: {
-            AND: [
-                {
-                    usersId: session.user.id
-                },
-                {
-                    active: true
-                }
-            ]
-        },
+   
 
-
+    
 
 
 

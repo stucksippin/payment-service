@@ -40,7 +40,7 @@ export default async function RootLayout({ children }) {
       <body className='bg-slate-100'>
         <div className="flex">
           <Header />
-          <UserBar />
+          {/* <UserBar /> */}
           <main className="mt-[200px] w-full ml-5 mr-5">{children}</main>
         </div>
         <footer></footer>
