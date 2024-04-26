@@ -5,12 +5,13 @@ import React from 'react'
 import getCards from '../libs/getCard';
 
 export default async function AccountPage() {
+
+
     const session = await getServerSession(NextAuthOptions)
     const prisma = new PrismaClient()
 
     let data = null
-    let activeCards = null
-    if (session && session.user) {
+    if (session) {
         data = await prisma.users.findFirst({
             where: {
                 id: session.user.id
@@ -18,9 +19,20 @@ export default async function AccountPage() {
         })
     }
     const cards = await getCards()
-   
+    const activeCards = await prisma.card.findMany({
+        where: {
+            AND: [
+                {
+                    usersId: session?.user.id
+                },
+                {
+                    active: true
+                }
+            ]
+        },
 
-    
+    })
+
 
 
 
