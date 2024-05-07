@@ -19,10 +19,8 @@ export default async function RootLayout({ children }) {
     <html lang="en">
 
       <body className='bg-slate-100'>
-        <div className="flex">
-          <Header />
-          <UserBar />
-          <main className="mt-[200px] w-full ml-5 mr-5">{children}</main>
+        <div>
+          <main>{children}</main>
         </div>
         <footer></footer>
 

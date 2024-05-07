@@ -2,7 +2,7 @@ import { NextAuthOptions } from '@/config'
 import { PrismaClient } from '@prisma/client';
 import { getServerSession } from 'next-auth'
 import React from 'react'
-import getCards from '../libs/getCard';
+import getCards from '../../libs/getCard';
 
 export default async function AccountPage() {
 

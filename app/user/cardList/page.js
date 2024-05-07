@@ -1,6 +1,6 @@
 import React from 'react'
-import getCards from '../libs/getCard'
-import CardTable from '../components/card/CardTable'
+import getCards from '../../libs/getCard'
+import CardTable from '../../components/card/CardTable'
 
 export default async function CardList() {
     const cards = await getCards()
